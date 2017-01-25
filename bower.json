@@ -1,5 +1,6 @@
 {
   "name": "daily-planner",
   "dependencies": {
+    "bulma": "0.1.2"
   }
 }
