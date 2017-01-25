@@ -16,6 +16,7 @@
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",
+    "dotenv": "^4.0.0",
     "ember-ajax": "^2.4.1",
     "ember-basic-dropdown": "0.21.0",
     "ember-bulma": "open-tux/ember-bulma",
@@ -45,9 +46,9 @@
     "ember-simple-auth": "1.2.0-beta.2",
     "ember-simple-form": "2.1.0",
     "ember-source": "^2.11.0",
-    "ember-welcome-page": "^2.0.2",
     "eslint-config-rtablada": "^4.0.0",
-    "loader.js": "^4.0.10"
+    "loader.js": "^4.0.10",
+    "torii": "0.8.1"
   },
   "engines": {
     "node": ">= 0.12.0"

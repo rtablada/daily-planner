@@ -1,11 +1,28 @@
-/* jshint node: true */
+/* eslint-env node */
 
-module.exports = function(environment) {
-  var ENV = {
+require('dotenv').config();
+
+module.exports = function (environment) {
+  const ENV = {
+    DS: {
+      host: 'http://localhost:3000',
+      namespace: 'api',
+    },
     modulePrefix: 'daily-planner',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
+
+    torii: {
+      sessionServiceName: 'session',
+      providers: {
+        'github-oauth2': {
+          apiKey: process.env.GITHUB_ID,
+          redirectUri: 'http://localhost:4200',
+          scope: 'repo user'
+        }
+      }
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +60,6 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-
   }
 
   return ENV;
