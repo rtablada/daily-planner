@@ -23,6 +23,15 @@ module.exports = function (environment) {
         }
       }
     },
+
+    'ember-simple-auth': {
+      authenticationRoute: 'index',
+    },
+
+    'ember-simple-auth-token': {
+      tokenPropertyName: 'access_token',
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

@@ -11,8 +11,8 @@ export default Ember.Controller.extend({
     login() {
       this.get('session')
         .authenticate('authenticator:torii', 'github')
-        .then((success) => {
-          debugger;
+        .then(() => {
+          this.transitionToRoute('users');
         })
         .catch((e) => {
           console.log(e);
