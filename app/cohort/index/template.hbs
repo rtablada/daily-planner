@@ -1,0 +1,24 @@
+<div class="columns">
+  <div class="column is-8-desktop is-offset-2-desktop">
+    <div class="panel is-fullwidth">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          Cohorts
+        </h2>
+
+        {{#link-to "cohort.new" class="card-header-icon"}}
+          <span class="icon">
+            <i class="fa fa-plus"></i>
+          </span>
+        {{/link-to}}
+      </div>
+      {{#each model as |cohort|}}
+        <div class="panel-block">
+          <p class="level is-mobile">
+            <span class="level-left">{{cohort.name}} - {{cohort.startDate}}</span>
+          </p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<div class="columns">
+  <div class="column is-8-desktop is-offset-2-desktop">
+    {{#simple-form onsubmit=(action "saveCohort") class="card is-fullwidth" as |formValues|}}
+      <div class="card-header">
+        <h2 class="card-header-title">
+          New Cohort
+        </h2>
+
+        {{#link-to "cohort" class="card-header-icon is-info" }}
+          <span class="icon">
+            <i class="fa fa-remove"></i>
+          </span>
+        {{/link-to}}
+      </div>
+      <div class="card-content">
+        <div class="control">
+          <label for="cohort-campus">Campus</label> {{bulma-input value=formValues.campus oninput=(action (mut formValues.campus) value="target.value") placeholder="Campus" id="cohort-campus"}}
+        </div>
+
+        <div class="control">
+          <label for="cohort-name">Cohort Name</label> {{bulma-input value=formValues.name oninput=(action (mut formValues.name) value="target.value") placeholder="Cohort Name" id="cohort-name"}}
+        </div>
+
+        <div class="control">
+          {{#basic-dropdown as |dropdown|}}
+            <label for="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}">Start Date</label>
+            <input type="text" id="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}" class="input"
+              onclick={{dropdown.actions.toggle}} onfocus={{dropdown.actions.toggle}}
+              value={{if formValues.startDate (moment-format formValues.startDate 'DD-MM-YYYY')}}
+              placeholder="Choose Start Date" readonly>
+
+            {{#dropdown.content class="datepicker" }}
+              {{#power-calendar class="demo-calendar-small" center=center onCenterChange=(action (mut center) value="date") selected=formValues.startDate onSelect=(action (mut formValues.startDate) value="date") as |calendar|}}
+                {{calendar.nav}} {{calendar.days}}
+              {{/power-calendar}}
+            {{/dropdown.content}}
+          {{/basic-dropdown}}
+          <label for=""></label>
+        </div>
+      </div>
+
+      <div class="card-footer">
+        {{link-to "Back" "cohort.index" class="card-footer-item"}}
+        <button class="card-footer-item button is-primary">Submit</button>
+      </div>
+    {{/simple-form}}
+  </div>
+</div>

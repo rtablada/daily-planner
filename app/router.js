@@ -8,6 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function () {
   this.route('users');
+  this.route('cohort', function() {
+    this.route('new');
+  });
 });
 
 export default Router;

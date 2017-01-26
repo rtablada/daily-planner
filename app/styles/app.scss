@@ -1,4 +1,16 @@
+@import 'ember-power-calendar';
+@import 'ember-basic-dropdown';
 @import 'bulma';
+
+.datepicker {
+  border: 1px solid #CCC;
+  border-radius: $radius;
+  box-shadow: rgba(0,0,0,.172549) 0 6px 12px 0;
+}
+
+.demo-calendar-small {
+  @include ember-power-calendar($cell-size: 30px);
+}
 
 .button {
   cursor: pointer;
@@ -24,4 +36,13 @@
 
 .section {
   background: none;
+}
+
+.card-header-icon.is-info {
+  color: $grey-light;
+}
+
+.card-footer-item.button {
+  height: auto;
+  border-radius: 0;
 }
