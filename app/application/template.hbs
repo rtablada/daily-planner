@@ -1,47 +1,47 @@
-<div class="hero is-bold is-primary is-info">
-  <div class="hero-head">
-    <div class="container">
-      {{#bulma-nav hasShadow=true}}
-        {{#bulma-nav-left}}{{/bulma-nav-left}}
+<div class="app">
+  <div class="hero is-bold is-primary is-info">
+    <div class="hero-head">
+      <div class="container">
+        {{#bulma-nav hasShadow=true}}
+          {{#bulma-nav-left}}{{/bulma-nav-left}}
 
-        {{#bulma-nav-center}}{{/bulma-nav-center}}
+          {{#bulma-nav-center}}{{/bulma-nav-center}}
 
-        {{#bulma-nav-toggle onmousedown=(action toggleProperty 'toggleNav')}}
-          <span></span>
-          <span></span>
-          <span></span>
-        {{/bulma-nav-toggle}}
+          {{#bulma-nav-toggle onmousedown=(action toggleProperty 'toggleNav')}}
+            <span></span>
+            <span></span>
+            <span></span>
+          {{/bulma-nav-toggle}}
 
-        {{#bulma-nav-right isMenu=true}}
-        {{#if session.isAuthenticated}}
-          {{link-to "Cohorts" "cohort" class="nav-item"}}
-          <a href="#" class="nav-item" onclick={{action "logout"}}>Logout</a>
-        {{else}}
-          <div class="nav-item">
-            <a href="#" class="button is-light is-outlined" onclick={{action "login"}}>
-              <span class="icon"><span class="fa fa-github"></span></span>
-              <span>Login With GitHub</span>
-            </a>
-          </div>
-        {{/if}}
-        {{/bulma-nav-right}}
-      {{/bulma-nav}}
+          {{#bulma-nav-right isMenu=true}}
+          {{#if session.isAuthenticated}}
+            {{link-to "Cohorts" "cohort" class="nav-item"}}
+            <a href="#" class="nav-item" onclick={{action "logout"}}>Logout</a>
+          {{else}}
+            <div class="nav-item">
+              <a href="#" class="button is-light is-outlined" onclick={{action "login"}}>
+                <span class="icon"><span class="fa fa-github"></span></span>
+                <span>Login With GitHub</span>
+              </a>
+            </div>
+          {{/if}}
+          {{/bulma-nav-right}}
+        {{/bulma-nav}}
+      </div>
+
+      {{#if toggleNav}}
+        {{#bulma-menu isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true}}
+          {{#bulma-menu-list}}
+            <li>
+              {{link-to "Login" "login" class="nav-item"}}
+            </li>
+          {{/bulma-menu-list}}
+        {{/bulma-menu}}
+      {{/if}}
     </div>
-
-    {{#if toggleNav}}
-      {{#bulma-menu isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true}}
-        {{#bulma-menu-list}}
-          <li>
-            {{link-to "Login" "login" class="nav-item"}}
-          </li>
-        {{/bulma-menu-list}}
-      {{/bulma-menu}}
-    {{/if}}
   </div>
-</div>
 
-{{alert-messages}}
+  {{alert-messages}}
 
-<div class="section">
-  <div class="container">{{outlet}}</div>
+  <div class="app__content">{{outlet}}</div>
 </div>

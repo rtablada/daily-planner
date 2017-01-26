@@ -1,0 +1,29 @@
+<div class="columns is-grow">
+  <div class="column is-3">
+    <div class="panel is-fullwidth is-fullheight">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          {{ model.campus }} - {{ model.name }}
+        </h2>
+
+        {{#link-to "cohort.new" class="card-header-title is-justify-end is-primary"}}
+          Add Lesson
+          <span class="icon">
+            <i class="fa fa-plus"></i>
+          </span>
+        {{/link-to}}
+      </div>
+
+      {{#each model as |cohort|}}
+        <div class="panel-block">
+          <p class="level is-mobile">
+            <span class="level-left">{{cohort.name}} - {{cohort.startDate}}</span>
+            <span class="level-right">
+              {{link-to "More" "cohort.detail" cohort}}
+            </span>
+          </p>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>

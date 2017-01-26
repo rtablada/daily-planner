@@ -54,3 +54,34 @@
     display: none;
   }
 }
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  height: 100vh;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+.is-grow {
+  flex-grow: 1;
+}
+
+.is-fullheight {
+  height: 100%;
+}
+
+.is-justify-end {
+  justify-content: flex-end;
+}
+
+.card-header-title {
+  &.is-primary {
+    color: $primary;
+  }
+}

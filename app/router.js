@@ -11,6 +11,10 @@ Router.map(function () {
   this.route('cohort', function () {
     this.route('new');
     this.route('invite', { path: '/:cohort_id/invites' });
+
+    this.route('detail', {
+      path: '/:cohort_id'
+    });
   });
 });
 

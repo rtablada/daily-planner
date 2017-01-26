@@ -1,16 +1,14 @@
-<div class="columns">
-  <div class="column is-8-desktop is-offset-2-desktop">
-    <div class="panel is-fullwidth">
-      <h2 class="panel-heading">Users</h2>
+{{#center-grid}}
+  <div class="panel is-fullwidth">
+    <h2 class="panel-heading">Users</h2>
 
-      {{#each model as |user|}}
-        <div class="panel-block">
-          <p class="level is-mobile">
-            <span class="level-left">{{user.login}}</span>
-            <span class="level-right">{{user.name}}</span>
-          </p>
-        </div>
-      {{/each}}
-    </div>
+    {{#each model as |user|}}
+      <div class="panel-block">
+        <p class="level is-mobile">
+          <span class="level-left">{{user.login}}</span>
+          <span class="level-right">{{user.name}}</span>
+        </p>
+      </div>
+    {{/each}}
   </div>
-</div>
+{{/center-grid}}
