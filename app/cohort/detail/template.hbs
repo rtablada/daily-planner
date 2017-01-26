@@ -1,3 +1,10 @@
+<div class="nav">
+  <div class="nav-left">
+    {{link-to "Add New Lesson" "cohort.new-lesson" model class="nav-item"}}
+    {{link-to "Manage Students" "cohort.invite" model class="nav-item"}}
+  </div>
+</div>
+
 <div class="columns is-grow">
   <div class="column is-3">
     <div class="panel is-fullwidth is-fullheight">
@@ -5,13 +12,6 @@
         <h2 class="card-header-title">
           {{ model.campus }} - {{ model.name }}
         </h2>
-
-        {{#link-to "cohort.new" class="card-header-title is-justify-end is-primary"}}
-          Add Lesson
-          <span class="icon">
-            <i class="fa fa-plus"></i>
-          </span>
-        {{/link-to}}
       </div>
 
       {{#each model as |cohort|}}

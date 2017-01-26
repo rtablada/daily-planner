@@ -6,5 +6,6 @@ export default DS.Model.extend({
   campus: DS.attr('string'),
 
   invites: DS.hasMany('invite'),
+  students: DS.hasMany('student'),
   instructors: DS.hasMany('instructor'),
 });

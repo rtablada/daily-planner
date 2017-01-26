@@ -56,6 +56,7 @@
 }
 
 .app {
+  overflow: hidden;
   display: flex;
   flex-direction: column;
 
@@ -84,4 +85,12 @@
   &.is-primary {
     color: $primary;
   }
+}
+
+.remove-margin {
+  margin-top: -16px;
+}
+
+.panel {
+  background: $white;
 }

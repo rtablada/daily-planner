@@ -1,9 +1,24 @@
 {{#center-grid}}
+  <div class="panel is-fullwidth">
+    <div class="card-header">
+      <h2 class="card-header-title">
+          Students
+        </h2>
+    </div>
+
+    {{#each model.students as |student|}}
+      <div class="panel-block">
+        <p class="level is-mobile">
+          <span class="level-left">{{student.user.login}}</span>
+        </p>
+      </div>
+    {{/each}}
+  </div>
 
   <div class="panel is-fullwidth">
     <div class="card-header">
       <h2 class="card-header-title">
-          Cohorts
+          Invites
         </h2>
     </div>
 

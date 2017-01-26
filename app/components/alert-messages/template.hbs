@@ -1,9 +1,11 @@
-<div class="container container-notification">
-  {{#each flashMessages.queue as |flash|}}
-    {{log flash}}
-    <div class="notification is-{{flash.type}}">
-      <button class="delete" {{action "destroy" flash}}></button>
-      {{flash.message}}
-    </div>
-  {{/each}}
-</div>
+{{#if flashMessages.queue.length}}
+  <div class="container container-notification">
+    {{#each flashMessages.queue as |flash|}}
+      {{log flash}}
+      <div class="notification is-{{flash.type}}">
+        <button class="delete" {{action "destroy" flash}}></button>
+        {{flash.message}}
+      </div>
+    {{/each}}
+  </div>
+{{/if}}

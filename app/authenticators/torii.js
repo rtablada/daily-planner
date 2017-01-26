@@ -14,7 +14,7 @@ export default ToriiAuthenticator.extend({
   torii: Ember.inject.service(),
 
   authenticate() {
-    return this._super(...arguments).then(data => fetch(`${config.DS.host}/${config.DS.namespace}/token-auth`, {
+    return this._super(...arguments).then(data => fetch(`/${config.DS.namespace}/token-auth`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',

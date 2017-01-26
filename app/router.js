@@ -15,6 +15,10 @@ Router.map(function () {
     this.route('detail', {
       path: '/:cohort_id'
     });
+
+    this.route('new-lesson', {
+      path: '/:cohort_id/new-lesson'
+    });
   });
 });
 
