@@ -94,3 +94,9 @@
 .panel {
   background: $white;
 }
+
+.panel.is-fullheight {
+  .panel-block {
+    border-bottom: 1px solid #d3d6db;
+  }
+}

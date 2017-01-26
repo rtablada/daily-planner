@@ -1,1 +1,46 @@
-{{outlet}}
+{{#center-grid}}
+  {{#simple-form onsubmit=(action "saveLesson" model) class="card is-fullwidth" as |formValues|}}
+    <div class="card-header">
+      <h2 class="card-header-title">New Lesson</h2>
+
+      {{#link-to "cohort.detail" model class="card-header-icon is-info" }}
+        <span class="icon">
+            <i class="fa fa-remove"></i>
+          </span>
+      {{/link-to}}
+    </div>
+    <div class="card-content">
+      <div class="control">
+        <label for="cohort-week">Week Number</label> {{bulma-input value=formValues.week oninput=(action (mut formValues.week) value="target.value") placeholder="Week Number" id="cohort-week"}}
+      </div>
+
+      <div class="control">
+        <label for="cohort-day">Day Number</label> {{bulma-input value=formValues.day oninput=(action (mut formValues.day) value="target.value") placeholder="Day Number" id="cohort-day"}}
+      </div>
+
+      <div class="control">
+        {{#basic-dropdown as |dropdown|}}
+          <label for="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}">Date</label>
+          <input type="text" id="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}"
+            class="input" onclick={{dropdown.actions.toggle}} onfocus={{dropdown.actions.toggle}}
+            value={{if formValues.startDate (moment-format formValues.startDate 'DD-MM-YYYY')}}
+            placeholder="Choose Date" readonly>
+
+            {{#dropdown.content class="datepicker" }}
+              {{#power-calendar class="demo-calendar-small"
+                center=center onCenterChange=(action (mut center) value="date")
+                selected=formValues.startDate onSelect=(action (mut formValues.startDate) value="date" ) as |calendar|}}
+                {{calendar.nav}} {{calendar.days}}
+              {{/power-calendar}}
+            {{/dropdown.content}}
+        {{/basic-dropdown}}
+        <label for=""></label>
+      </div>
+    </div>
+
+    <div class="card-footer">
+      {{link-to "Back" "cohort.index" class="card-footer-item"}}
+      <button class="card-footer-item button is-primary">Submit</button>
+    </div>
+  {{/simple-form}}
+{{/center-grid}}

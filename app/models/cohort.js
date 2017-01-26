@@ -5,6 +5,7 @@ export default DS.Model.extend({
   startDate: DS.attr('moment-utc'),
   campus: DS.attr('string'),
 
+  lessons: DS.hasMany('lesson'),
   invites: DS.hasMany('invite'),
   students: DS.hasMany('student'),
   instructors: DS.hasMany('instructor'),

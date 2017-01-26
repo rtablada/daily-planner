@@ -19,6 +19,13 @@ Router.map(function () {
     this.route('new-lesson', {
       path: '/:cohort_id/new-lesson'
     });
+
+    this.route('lesson-edit', {
+      path: '/:cohort_id/lessons/:lesson_id/edit'
+    }, function() {
+      this.route('instructor-notes');
+      this.route('detail');
+    });
   });
 });
 
