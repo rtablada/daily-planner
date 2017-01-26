@@ -46,3 +46,11 @@
   height: auto;
   border-radius: 0;
 }
+
+.container-notification {
+  margin-top: 16px;
+
+  &:empty {
+    display: none;
+  }
+}
