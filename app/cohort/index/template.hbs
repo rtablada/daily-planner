@@ -12,10 +12,14 @@
           </span>
         {{/link-to}}
       </div>
+
       {{#each model as |cohort|}}
         <div class="panel-block">
           <p class="level is-mobile">
             <span class="level-left">{{cohort.name}} - {{cohort.startDate}}</span>
+            <span class="level-right">
+              {{link-to "Student Invites" "cohort.invite" cohort}}
+            </span>
           </p>
         </div>
       {{/each}}

@@ -8,8 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function () {
   this.route('users');
-  this.route('cohort', function() {
+  this.route('cohort', function () {
     this.route('new');
+    this.route('invite', { path: '/:cohort_id/invites' });
   });
 });
 

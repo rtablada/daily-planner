@@ -1,0 +1,35 @@
+<div class="columns">
+  <div class="column is-8-desktop is-offset-2-desktop">
+    <div class="panel is-fullwidth">
+      <div class="card-header">
+        <h2 class="card-header-title">
+          Cohorts
+        </h2>
+      </div>
+
+      {{#each model.invites as |invite|}}
+        <div class="panel-block">
+          <p class="level is-mobile">
+            <span class="level-left">{{invite.login}}</span>
+            <span class="level-right">
+              <button class="button is-danger is-outlined" onclick={{action "uninvite" invite}}>Uninvite</button>
+            </span>
+          </p>
+        </div>
+      {{/each}}
+
+      <div class="panel-block">
+        {{#simple-form onsubmit=(action "saveInvite" model) as |newInvite reset|}}
+          <label for="invite-login">Invite a Student</label>
+          <div class="control has-addons is-fullwidth">
+            <button class="button" type="button" onclick={{action reset}}>Clear</button>
+
+            {{bulma-input value=newInvite.login oninput=(action (mut newInvite.login) value="target.value") placeholder="Github Username" class="is-expanded" id="invite-login"}}
+
+            <button class="button is-primary">Invite</button>
+          </div>
+        {{/simple-form}}
+      </div>
+    </div>
+  </div>
+</div>
