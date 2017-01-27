@@ -2,6 +2,8 @@
 @import 'ember-basic-dropdown';
 @import 'bulma';
 
+@import "code-editor";
+
 .datepicker {
   border: 1px solid #CCC;
   border-radius: $radius;
@@ -62,6 +64,10 @@
 
   height: 100vh;
 
+  > .hero {
+    flex-shrink: 0;
+  }
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -120,4 +126,12 @@
 
 .is-scrollable {
   overflow: scroll;
+}
+
+pre code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #333;
+  color: white;
 }

@@ -5,12 +5,17 @@ const EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function (defaults) {
   const app = new EmberApp(defaults, {
     codemirror: {
-      modes: ['javascript', 'markdown'],
+      addons: ['overlay'],
+      modes: ['javascript', 'markdown', 'gfm'],
       keyMaps: ['sublime'],
-      themes: ['solarized']
+      themes: []
     }
     // Add options here
   });
+
+  app.import(`${app.bowerDirectory}/codemirror/addon/mode/overlay.js`);
+
+  app.import('bower_components/highlightjs/styles/agate.css');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

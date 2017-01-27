@@ -1,0 +1,142 @@
+$code-bg: #333;
+$code-selected: #888;
+$code-highlighted: #e3e3e3;
+$code-color1: #ade5fc;
+$code-color2: #a2fca2;
+$code-color3: #c6b4f0;
+$code-color4: #d36363;
+$code-keyword: #fcc28c;
+$code-cursor: #fc9b9b;
+$code-variable: #ffa;
+$code-color10: #62c8f3;
+
+.cm-s-agate {
+
+  &.CodeMirror {
+    background: $code-bg;
+    color: $code-highlighted;
+
+    pre {
+      font-family: "Source Code Pro", "Monaco", "Inconsolata", monospace;
+    }
+  }
+
+  div.CodeMirror-selected {
+    background: rgba($code-highlighted, 0.1);
+  }
+
+  .CodeMirror-line::selection,
+  .CodeMirror-line>span::selection,
+  .CodeMirror-line>span>span::selection,
+  .CodeMirror-line::-moz-selection,
+  .CodeMirror-line>span::-moz-selection,
+  .CodeMirror-line>span>span::-moz-selection {
+    background: rgba($code-color2, 0.2);
+  }
+
+  .CodeMirror-gutters {
+    background: $code-highlighted;
+    border-right: 0;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
+  }
+
+  .CodeMirror-guttermarker {
+    color: #222;
+  }
+
+  .CodeMirror-guttermarker-subtle {
+    color: $code-selected;
+  }
+
+  .CodeMirror-linenumber {
+    color: $code-bg;
+  }
+
+  .CodeMirror-cursor {
+    border-left: 1px solid $code-cursor;
+  }
+
+  span.cm-keyword, span.cm-atom {
+    color: $code-keyword;
+    // font-weight: bold;
+  }
+
+  span.cm-number {
+    color: $code-color4;
+  }
+
+  span.cm-def {
+    color: $code-highlighted;
+  }
+
+  span.cm-variable {
+    color: $code-variable;
+    font-weight: bold;
+  }
+
+  span.cm-variable-2 {
+    color: $code-color2;
+  }
+
+  span.cm-variable-3 {
+    color: $code-color3;
+  }
+
+  span.cm-property {
+    color: $code-color10;
+  }
+
+  span.cm-operator {
+    color: $code-highlighted;
+  }
+
+  span.cm-comment {
+    color: $code-selected;
+    font-style: italic;
+  }
+
+  span.cm-string {
+    color: $code-color2;
+  }
+
+  span.cm-meta {
+    color: $code-color3;
+  }
+
+  span.cm-qualifier {
+    color: $code-variable;
+  }
+
+  span.cm-builtin {
+    color: $code-color10;
+  }
+
+  span.cm-bracket {
+    color: $code-highlighted;
+  }
+
+  span.cm-tag {
+    color: $code-variable;
+  }
+
+  span.cm-attribute {
+    color: $code-color2;
+  }
+
+  span.cm-error {
+    color: $code-color4;
+  }
+
+  span.cm-header {
+    color: $code-color2;
+    font-weight: bold;
+  }
+
+  span.cm-link {
+    color: $code-color3;
+  }
+}
+
+.CodeMirror {
+
+}

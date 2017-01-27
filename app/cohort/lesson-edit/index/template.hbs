@@ -6,7 +6,7 @@
       </h2>
 
       {{ivy-codemirror class="textarea is-grow"
-        options=(hash lineNumbers=true mode="markdown" theme="solarized")
+        options=(hash lineNumbers=true mode="gfm" theme="agate")
         value=lesson.publicNotes valueUpdated=(action (mut lesson.publicNotes))}}
 
       <div class="panel-block">
@@ -24,7 +24,7 @@
 
   <div class="column is-6 is-scrollable">
     <div class="section content">
-      {{md-text text=lesson.publicNotes linkify=true}}
+      {{md-text text=lesson.publicNotes linkify=true linkTarget="_blank"}}
     </div>
   </div>
 {{/simple-form}}
