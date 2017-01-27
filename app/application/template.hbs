@@ -31,9 +31,20 @@
     {{#if toggleNav}}
       {{#bulma-menu isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true}}
         {{#bulma-menu-list}}
-          <li>
-            {{link-to "Login" "login" class="nav-item"}}
-          </li>
+          {{#if session.isAuthenticated}}
+            <li>
+              {{link-to "Cohorts" "cohort" class="nav-item"}}</li>
+            <li>
+              <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
+            </li>
+          {{else}}
+            <li>
+              <a href="#" class="button is-light is-outlined is-fullwidth" onclick= {{action "login"}}>
+                <span class="icon"><span class="fa fa-github"></span></span>
+                <span>Login With GitHub</span>
+              </a>
+            </li>
+          {{/if}}
         {{/bulma-menu-list}}
       {{/bulma-menu}}
     {{/if}}
