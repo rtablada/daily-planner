@@ -2,6 +2,9 @@
   "name": "daily-planner",
   "dependencies": {
     "bulma": "0.1.2",
-    "font-awesome": "~4.5.0"
+    "font-awesome": "~4.5.0",
+    "remarkable": "^1.7.1",
+    "highlightjs": "^9.9.0",
+    "codemirror": "~5.15.0"
   }
 }

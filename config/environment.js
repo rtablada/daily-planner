@@ -5,7 +5,7 @@ require('dotenv').config();
 module.exports = function (environment) {
   const ENV = {
     DS: {
-      // host: 'http://localhost:3333',
+      host: 'http://localhost:3333',
       namespace: 'api',
     },
     modulePrefix: 'daily-planner',
@@ -18,7 +18,7 @@ module.exports = function (environment) {
       providers: {
         'github-oauth2': {
           apiKey: process.env.GITHUB_ID,
-          redirectUri: 'http://cfb500c9.ngrok.io',
+          redirectUri: 'http://localhost:4200',
           // scope: 'repo user'
         }
       }
