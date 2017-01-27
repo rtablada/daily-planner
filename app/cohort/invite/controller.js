@@ -2,10 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    saveInvite(cohort, formValues, reset) {
+    saveInvite(cohort, instructor, formValues, reset) {
       const invite = this.store.createRecord('invite', {
         ...formValues,
-        cohort
+        instructor,
+        cohort,
       });
 
       invite.save()
