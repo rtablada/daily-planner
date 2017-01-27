@@ -5,8 +5,8 @@ moduleForModel('invite', 'Unit | Model | invite', {
   needs: ['model:cohort']
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
+test('it exists', function (assert) {
+  const model = this.subject();
   // let store = this.store();
   assert.ok(!!model);
 });

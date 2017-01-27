@@ -29,13 +29,13 @@
           <label for="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}">Date</label>
           <input type="text" id="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}"
             class="input" onclick={{dropdown.actions.toggle}} onfocus={{dropdown.actions.toggle}}
-            value={{if formValues.startDate (moment-format formValues.startDate 'MM/DD/YY')}}
+            value={{if formValues.date (moment-format formValues.date 'MM/DD/YY')}}
             placeholder="Choose Date" readonly>
 
             {{#dropdown.content class="datepicker" }}
               {{#power-calendar class="demo-calendar-small"
                 center=center onCenterChange=(action (mut center) value="date")
-                selected=formValues.startDate onSelect=(action (mut formValues.startDate) value="date" ) as |calendar|}}
+                selected=formValues.date onSelect=(action (mut formValues.date) value="date" ) as |calendar|}}
                 {{calendar.nav}} {{calendar.days}}
               {{/power-calendar}}
             {{/dropdown.content}}

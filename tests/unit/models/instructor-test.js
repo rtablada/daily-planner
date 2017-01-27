@@ -5,8 +5,8 @@ moduleForModel('instructor', 'Unit | Model | instructor', {
   needs: ['model:cohort', 'model:user']
 });
 
-test('it exists', function(assert) {
-  let model = this.subject();
+test('it exists', function (assert) {
+  const model = this.subject();
   // let store = this.store();
   assert.ok(!!model);
 });

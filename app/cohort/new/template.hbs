@@ -28,7 +28,7 @@
               readonly>
 
             {{#dropdown.content class="datepicker" }}
-              {{#power-calendar class="demo-calendar-small" center=center onCenterChange=(action (mut center) value="date" ) selected=formValues.startDate onSelect=(action (mut formValues.startDate) value="date" ) as |calendar|}}
+              {{#power-calendar class="demo-calendar-small" center=center onCenterChange=(action (mut center) value="date") selected=formValues.startDate onSelect=(action (mut formValues.startDate) value="date" ) as |calendar|}}
                 {{calendar.nav}} {{calendar.days}}
               {{/power-calendar}}
             {{/dropdown.content}}

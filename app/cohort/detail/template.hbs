@@ -14,16 +14,20 @@
         </h2>
       </div>
 
-      {{#each model.lessons as |lesson|}}
+      {{#each-in (group-by "week" model.lessons) as |week lessons|}}
+        <div class="panel-block">Week {{week}}</div>
+        {{#each (sort-by "date" lessons) as |lesson|}}
         <div class="panel-block">
           <p class="level is-mobile">
             <span class="level-left">
-              {{#link-to "cohort.detail.lesson" lesson}}Week {{lesson.week}} - Day {{lesson.day}}{{/link-to}}
+              {{#link-to "cohort.detail.lesson" lesson}}{{moment-format lesson.date "dddd"}}{{/link-to}}
             </span>
             <span class="level-right">{{link-to "Edit" "cohort.lesson-edit" lesson}}</span>
           </p>
         </div>
-      {{/each}}
+        {{/each}}
+      {{/each-in}}
+
     </div>
   </div>
 

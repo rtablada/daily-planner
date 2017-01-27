@@ -65,6 +65,10 @@
 
   height: 100vh;
 
+  @media (max-width: $tablet) {
+    height: auto;
+  }
+
   > .hero {
     flex-shrink: 0;
   }
