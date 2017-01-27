@@ -1,1 +1,30 @@
-{{outlet}}
+{{#simple-form startingValues=model onsubmit=(action "saveLesson" model) class="columns is-grow" as |lesson reset|}}
+  <div class="column is-6 is-collapsible {{if readOnly "is-collapse"}}">
+    <div class="is-fullheight is-fullwidth card flex-vertical">
+      <h2 class="card-header">
+        <h2 class="card-header-title">Instructor Notes - Week {{lesson.week}} - Day {{lesson.day}}</h2>
+      </h2>
+
+      {{ivy-codemirror class="textarea is-grow"
+        options=(hash lineNumbers=true mode="gfm" theme="agate")
+        value=lesson.instructorNotes valueUpdated=(action (mut lesson.instructorNotes))}}
+
+      <div class="panel-block">
+        <div class="level is-mobile">
+          <div class="level-left">
+            <button class="button is-fullwidth" {{action reset}}>Reset</button>
+          </div>
+          <div class="level-right">
+            <button class="button is-primary is-fullwidth">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column is-6 is-collapsible is-scrollable {{unless readOnly "is-collapse"}}">
+    <div class="section content">
+      {{md-text text=lesson.instructorNotes linkify=true linkTarget="_blank"}}
+    </div>
+  </div>
+{{/simple-form}}

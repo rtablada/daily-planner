@@ -17,11 +17,15 @@
       {{#each model.lessons as |lesson|}}
         <div class="panel-block">
           <p class="level is-mobile">
-            <span class="level-left">Week {{lesson.week}} - Day {{lesson.day}}</span>
+            <span class="level-left">
+              {{#link-to "cohort.detail.lesson" lesson}}Week {{lesson.week}} - Day {{lesson.day}}{{/link-to}}
+            </span>
             <span class="level-right">{{link-to "Edit" "cohort.lesson-edit" lesson}}</span>
           </p>
         </div>
       {{/each}}
     </div>
   </div>
+
+  <div class="column is-9 is-scrollable">{{outlet}}</div>
 </div>

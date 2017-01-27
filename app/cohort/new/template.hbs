@@ -24,7 +24,7 @@
       <div class="control">
         {{#basic-dropdown as |dropdown|}}
           <label for="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}">Start Date</label>
-          <input type="text" id="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}" class="input" onclick= {{dropdown.actions.toggle}} onfocus= {{dropdown.actions.toggle}} value= {{if formValues.startDate (moment-format formValues.startDate 'DD-MM-YYYY')}} placeholder="Choose Start Date"
+          <input type="text" id="ember-basic-dropdown-trigger-{{dropdown.uniqueId}}" class="input" onclick= {{dropdown.actions.toggle}} onfocus= {{dropdown.actions.toggle}} value= {{if formValues.startDate (moment-format formValues.startDate 'MM/DD/YY')}} placeholder="Choose Start Date"
               readonly>
 
             {{#dropdown.content class="datepicker" }}
