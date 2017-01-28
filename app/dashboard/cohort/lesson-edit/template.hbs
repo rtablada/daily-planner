@@ -1,0 +1,12 @@
+<div class="nav has-shadow">
+  <div class="nav-left">
+    {{link-to "Student Notes" "dashboard.cohort.lesson-edit.index" model class="nav-item"}}
+    {{link-to "Instructor Notes" "dashboard.cohort.lesson-edit.instructor-notes" model class="nav-item"}}
+    {{link-to "Details" "dashboard.cohort.lesson-edit.detail" model class="nav-item"}}
+    <div class="nav-item">
+      {{link-to "Back To Cohort" "dashboard.cohort.detail" model.cohort class="button"}}
+    </div>
+  </div>
+</div>
+
+{{outlet}}

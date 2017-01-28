@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 
       lesson.save()
         .then(() => {
-          this.transitionToRoute('cohort.detail', cohort);
+          this.transitionToRoute('dashboard.cohort.detail', cohort);
         });
     }
   }

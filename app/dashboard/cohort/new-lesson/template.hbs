@@ -1,6 +1,6 @@
 <div class="nav">
   <div class="nav-left">
-    {{link-to "Back to Cohort" "cohort.detail" model class="nav-item"}}
+    {{link-to "Back to Cohort" "dashboard.cohort.detail" model class="nav-item"}}
   </div>
 </div>
 
@@ -9,7 +9,7 @@
     <div class="card-header">
       <h2 class="card-header-title">New Lesson</h2>
 
-      {{#link-to "cohort.detail" model class="card-header-icon is-info" }}
+      {{#link-to "dashboard.cohort.detail" model class="card-header-icon is-info" }}
         <span class="icon">
             <i class="fa fa-remove"></i>
           </span>
@@ -45,7 +45,7 @@
     </div>
 
     <div class="card-footer">
-      {{link-to "Back" "cohort.index" class="card-footer-item"}}
+      {{link-to "Back" "dashboard.cohort.detail" model class="card-footer-item"}}
       <button class="card-footer-item button is-primary">Submit</button>
     </div>
   {{/simple-form}}

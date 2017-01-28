@@ -1,6 +1,6 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:cohort/invite', 'Unit | Route | cohort/invite', {
+moduleFor('route:dashboard/cohort/invite', 'Unit | Route | dashboard/cohort/invite', {
   // Specify the other units that are required for this test.
   // needs: ['controller:foo']
 });

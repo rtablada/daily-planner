@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
 
       cohort.save()
         .then(() => {
-          this.transitionToRoute('cohort.index');
+          this.transitionToRoute('dashboard.cohort.index');
         });
     }
   }

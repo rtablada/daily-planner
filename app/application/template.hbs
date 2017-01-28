@@ -14,7 +14,7 @@
 
         {{#bulma-nav-right isMenu=true}}
           {{#if session.isAuthenticated}}
-            {{link-to "Cohorts" "cohort" class="nav-item"}}
+            {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}
             <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
           {{else}}
             <div class="nav-item">
@@ -33,7 +33,7 @@
         {{#bulma-menu-list}}
           {{#if session.isAuthenticated}}
             <li>
-              {{link-to "Cohorts" "cohort" class="nav-item"}}</li>
+              {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}</li>
             <li>
               <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
             </li>

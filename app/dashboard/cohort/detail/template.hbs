@@ -1,7 +1,7 @@
 <div class="nav">
   <div class="nav-left">
-    {{link-to "Add New Lesson" "cohort.new-lesson" model class="nav-item"}}
-    {{link-to "Manage Students" "cohort.invite" model class="nav-item"}}
+    {{link-to "Add New Lesson" "dashboard.cohort.new-lesson" model class="nav-item"}}
+    {{link-to "Manage Students" "dashboard.cohort.invite" model class="nav-item"}}
   </div>
 </div>
 
@@ -20,9 +20,9 @@
         <div class="panel-block">
           <p class="level is-mobile">
             <span class="level-left">
-              {{#link-to "cohort.detail.lesson" lesson}}{{moment-format lesson.date "dddd"}}{{/link-to}}
+              {{#link-to "dashboard.cohort.detail.lesson" lesson}}{{moment-format lesson.date "dddd"}}{{/link-to}}
             </span>
-            <span class="level-right">{{link-to "Edit" "cohort.lesson-edit" lesson}}</span>
+            <span class="level-right">{{link-to "Edit" "dashboard.cohort.lesson-edit" lesson}}</span>
           </p>
         </div>
         {{/each}}

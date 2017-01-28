@@ -6,7 +6,7 @@
           Cohorts
         </h2>
 
-      {{#link-to "cohort.new" class="card-header-icon" }}
+      {{#link-to "dashboard.cohort.new" class="card-header-icon" }}
         <span class="icon">
             <i class="fa fa-plus"></i>
           </span>
@@ -18,7 +18,7 @@
         <p class="level is-mobile">
           <span class="level-left">{{cohort.name}} - {{cohort.startDate}}</span>
           <span class="level-right">
-              {{link-to "More" "cohort.detail" cohort}}
+              {{link-to "More" "dashboard.cohort.detail" cohort}}
             </span>
         </p>
       </div>
