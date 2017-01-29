@@ -16,7 +16,7 @@ export default Ember.Controller.extend({
         .authenticate('authenticator:torii', 'github')
         .then(() => {
           flash.success('Login Successful!');
-          this.transitionToRoute('users');
+          this.transitionToRoute('dashboard');
         })
         .catch((e) => {
           if (Array.isArray(e.errors)) {
