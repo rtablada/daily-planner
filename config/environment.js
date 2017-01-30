@@ -70,6 +70,7 @@ module.exports = function (environment) {
 
   if (environment === 'production') {
     ENV.DS.host = 'https://fathomless-ridge-22128.herokuapp.com';
+    ENV.torii.providers['github-oauth2'].redirectUri = 'https://tiy-daily-planner.herokuapp.com';
   }
 
   return ENV;
