@@ -69,6 +69,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.DS.host = 'https://fathomless-ridge-22128.herokuapp.com';
   }
 
   return ENV;
