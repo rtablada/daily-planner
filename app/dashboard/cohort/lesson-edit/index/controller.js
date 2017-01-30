@@ -6,5 +6,11 @@ export default Ember.Controller.extend({
       model.setProperties(formValue);
       model.save();
     },
+
+    copyFrom(model, from, to) {
+      const value = model.get(from);
+
+      model.set(to, value);
+    }
   }
 });
