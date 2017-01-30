@@ -19,6 +19,7 @@ export default Ember.Controller.extend({
           this.transitionToRoute('dashboard');
         })
         .catch((e) => {
+          console.log(e);
           if (Array.isArray(e.errors)) {
             return e.errors.map((error) => {
               flash.danger(error.title);
