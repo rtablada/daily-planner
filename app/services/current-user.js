@@ -7,11 +7,15 @@ export default Ember.Service.extend({
   store: Ember.inject.service(),
 
   user: null,
+  request: null,
 
   load() {
     const token = this.get('session.data.authenticated.access_token');
+    if (this.get('user')) {
+      return Promise.resolve(this.get('user'));
+    }
 
-    return fetch(`${config.DS.host}/${config.DS.namespace}/users/current`, {
+    const request = this.get('request') || fetch(`${config.DS.host}/${config.DS.namespace}/users/current`, {
       headers: {
         Authorization: `Bearer ${token}`,
       }
@@ -21,10 +25,16 @@ export default Ember.Service.extend({
       }
 
       return Promise.reject(this.get('session').invalidate());
-    }).then((data) => {
-      const currentUser = this.get('store').push(data);
+    }).then((response) => {
+      this.get('store').pushPayload(response);
 
-      this.set('user', currentUser);
+
+      return this.get('store').findRecord('user', response.data.id);
+    }).then((user) => {
+      this.set('user', user);
+      this.set('request', null);
     });
+
+    return request;
   }
 });

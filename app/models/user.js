@@ -5,4 +5,5 @@ export default DS.Model.extend({
   name: DS.attr(),
   email: DS.attr(),
   avatarUrl: DS.attr(),
+  isAdmin: DS.attr('boolean'),
 });

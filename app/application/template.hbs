@@ -14,7 +14,12 @@
 
         {{#bulma-nav-right isMenu=true}}
           {{#if session.isAuthenticated}}
-            {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}
+            {{#if currentUser.user.isAdmin}}
+              {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}
+              {{link-to "Users" "dashboard.users" class="nav-item"}}
+            {{else}}
+              {{link-to "My Cohort" "dashboard" class="nav-item"}}
+            {{/if}}
             <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
           {{else}}
             <div class="nav-item">
@@ -32,8 +37,12 @@
       {{#bulma-menu isHiddenDesktop=true isHiddenTablet=true isHiddenWidescreen=true}}
         {{#bulma-menu-list}}
           {{#if session.isAuthenticated}}
-            <li>
-              {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}</li>
+            {{#if currentUser.user.isAdmin}}
+              <li>{{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}</li>
+              <li>{{link-to "Users" "dashboard.users" class="nav-item"}}</li>
+            {{else}}
+              <li>{{link-to "My Cohort" "dashboard" class="nav-item"}}</li>
+            {{/if}}
             <li>
               <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
             </li>
