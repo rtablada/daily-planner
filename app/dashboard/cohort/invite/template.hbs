@@ -90,7 +90,7 @@
     {{/each}}
 
     <div class="panel-block">
-      {{#simple-form onsubmit=(action "saveInvite" model) as |newInvite reset|}}
+      {{#simple-form onsubmit=(action "saveInvite" model false) as |newInvite reset|}}
         <label for="student-invite-login">Invite a Student</label>
         <div class="control has-addons is-fullwidth">
           <button class="button" type="button" onclick= {{action reset}}>Clear</button> {{bulma-input value=newInvite.login oninput=(action (mut newInvite.login) value="target.value") placeholder="Github Username" class="is-expanded" id="student-invite-login"}}

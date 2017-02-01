@@ -69,9 +69,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.DS.host = 'https://fathomless-ridge-22128.herokuapp.com';
-    ENV.torii.providers['github-oauth2'].redirectUri = 'https://tiy-daily-planner.herokuapp.com';
-    ENV.torii.providers['github-oauth2'].redirectUri = process.env.PROD_API_HOST;
+    ENV.DS.host = process.env.PROD_API_HOST;
     ENV.torii.providers['github-oauth2'].redirectUri = process.env.PROD_REDIRECT_URL;
     ENV.torii.providers['github-oauth2'].apiKey = process.env.PROD_GITHUB_ID;
   }

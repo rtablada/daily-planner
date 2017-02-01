@@ -6,4 +6,7 @@ export default DS.Model.extend({
   email: DS.attr(),
   avatarUrl: DS.attr(),
   isAdmin: DS.attr('boolean'),
+
+  student: DS.belongsTo('student'),
+  instructor: DS.belongsTo('instructor'),
 });

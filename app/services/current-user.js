@@ -23,8 +23,9 @@ export default Ember.Service.extend({
       if (raw.ok) {
         return raw.json();
       }
+      raw.json();
 
-      return Promise.reject(this.get('session').invalidate());
+      // return Promise.reject(this.get('session').invalidate());
     }).then((response) => {
       this.get('store').pushPayload(response);
 
@@ -33,6 +34,8 @@ export default Ember.Service.extend({
     }).then((user) => {
       this.set('user', user);
       this.set('request', null);
+
+      return user;
     });
 
     return request;
