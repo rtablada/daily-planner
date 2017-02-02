@@ -1,12 +1,12 @@
 {{#simple-form startingValues=model onsubmit=(action "saveLesson" model) class="columns is-grow" as |lesson reset|}}
   <div class="column is-6">
     <div class="is-fullheight is-fullwidth card flex-vertical">
-      <h2 class="card-header">
+      <div class="card-header">
         <h2 class="card-header-title">Student Notes - Week {{lesson.week}} - Day {{lesson.day}}</h2>
-      </h2>
+      </div>
 
       {{ivy-codemirror class="textarea is-grow"
-        options=(hash lineNumbers=true mode="gfm" theme="agate")
+        options=(hash lineNumbers=true mode="gfm" theme="agate" keyMap="sublime")
         value=lesson.publicNotes valueUpdated=(action (mut lesson.publicNotes))}}
 
       <div class="panel-block">
