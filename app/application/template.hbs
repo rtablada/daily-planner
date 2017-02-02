@@ -13,13 +13,17 @@
         {{/bulma-nav-toggle}}
 
         {{#bulma-nav-right isMenu=true}}
+          {{#if-admin}}
+            {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}
+            {{link-to "Users" "dashboard.users" class="nav-item"}}
+          {{/if-admin}}
+
+          {{#if-student}}
+            {{link-to "My Cohort" "dashboard" class="nav-item"}}
+          {{/if-student}}
+
           {{#if session.isAuthenticated}}
-            {{#if currentUser.user.isAdmin}}
-              {{link-to "Cohorts" "dashboard.cohort" class="nav-item"}}
-              {{link-to "Users" "dashboard.users" class="nav-item"}}
-            {{else}}
-              {{link-to "My Cohort" "dashboard" class="nav-item"}}
-            {{/if}}
+
             <a href="#" class="nav-item" onclick= {{action "logout"}}>Logout</a>
           {{else}}
             <div class="nav-item">

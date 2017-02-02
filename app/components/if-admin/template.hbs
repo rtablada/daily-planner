@@ -1,0 +1,5 @@
+{{#if session.isAuthenticated}}
+  {{#if currentUser.user.isAdmin}}
+    {{yield}}
+  {{/if}}
+{{/if}}

@@ -1,9 +1,11 @@
-<div class="nav">
-  <div class="nav-left">
-    {{link-to "Add New Lesson" "dashboard.cohort.new-lesson" model class="nav-item"}}
-    {{link-to "Manage Students" "dashboard.cohort.invite" model class="nav-item"}}
+{{#if-admin}}
+  <div class="nav">
+    <div class="nav-left">
+        {{link-to "Add New Lesson" "dashboard.cohort.new-lesson" model class="nav-item"}}
+        {{link-to "Manage Students" "dashboard.cohort.invite" model class="nav-item"}}
+    </div>
   </div>
-</div>
+{{/if-admin}}
 
 <div class="columns is-grow">
   <div class="column is-3">
@@ -22,7 +24,10 @@
             <span class="level-left">
               {{#link-to "dashboard.cohort.detail.lesson" lesson}}{{moment-format lesson.date "dddd"}}{{/link-to}}
             </span>
-            <span class="level-right">{{link-to "Edit" "dashboard.cohort.lesson-edit" lesson}}</span>
+
+            {{#if-admin}}
+              <span class="level-right">{{link-to "Edit" "dashboard.cohort.lesson-edit" lesson}}</span>
+            {{/if-admin}}
           </p>
         </div>
         {{/each}}
