@@ -44,6 +44,7 @@
     "ember-export-application-global": "^1.0.5",
     "ember-font-awesome": "2.2.0",
     "ember-load-initializers": "^0.6.0",
+    "ember-lodash": "^4.17.0",
     "ember-moment": "7.3.0",
     "ember-network": "0.3.1",
     "ember-power-calendar": "0.1.8",
