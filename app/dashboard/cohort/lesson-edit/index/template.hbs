@@ -6,7 +6,8 @@
       </div>
 
       {{ivy-codemirror class="textarea is-grow"
-        options=(hash lineNumbers=true mode="gfm" theme="agate" keyMap="sublime")
+        options=(hash lineNumbers=true mode="gfm" theme="agate" keyMap="sublime"
+          extraKeys=(hash Cmd-S=(action "saveLesson" model lesson)))
         value=lesson.publicNotes valueUpdated=(action (mut lesson.publicNotes))}}
 
       <div class="panel-block">
