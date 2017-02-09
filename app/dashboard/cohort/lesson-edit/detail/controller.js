@@ -1,9 +1,13 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Controller.extend({
   actions: {
     saveLesson(lesson, formValues) {
-      lesson.setProperties(formValues);
+      lesson.setProperties({
+        ...formValues,
+        date: moment(formValues.date),
+      });
 
       lesson.save()
         .then(() => {

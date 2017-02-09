@@ -1,11 +1,13 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Controller.extend({
   actions: {
     saveLesson(cohort, formValues) {
       const lesson = this.store.createRecord('lesson', {
         ...formValues,
-        cohort
+        cohort,
+        date: moment(formValues.date),
       });
 
       lesson.save()
